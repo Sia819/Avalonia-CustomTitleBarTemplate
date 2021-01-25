@@ -5,13 +5,15 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CustomTitleBarTemplate.Views.CustomTitleBars.WindowsTitleBar"
              DockPanel.Dock="Top">
-    <StackPanel>
+    
+    <StackPanel Orientation="Vertical">
         <Grid>
-            <!--The proper way would be not to use white as default, but somehow retrieve the users' window chrome color.-->
+            <!-- ★ The proper way would be not to use white as default, but somehow retrieve the users' window chrome color. -->
             <DockPanel Background="White"
                        IsHitTestVisible="False"
                        Name="TitleBarBackground"/>
             <DockPanel Name="TitleBar">
+                <!-- Title Discription Area -->
                 <StackPanel Orientation="Horizontal"
                             DockPanel.Dock="Left"
                             Spacing="0">
@@ -36,10 +38,11 @@
                              Name="SystemChromeTitle"/>
                 </StackPanel>
 
-
+                <!-- Title Control Area -->
                 <StackPanel HorizontalAlignment="Right"
                             Orientation="Horizontal"
                             Spacing="0">
+                    <!-- Minimize Button -->
                     <Button Width="46"
                             Height="30"
                             HorizontalContentAlignment="Center"
@@ -62,7 +65,7 @@
                               Fill="{DynamicResource SystemControlForegroundBaseHighBrush}"
                               Data="M2048 1229v-205h-2048v205h2048z"></Path>
                     </Button>
-
+                    <!-- Maximize Button -->
                     <Button Width="46"
                             VerticalAlignment="Stretch"
                             BorderThickness="0"
@@ -89,7 +92,7 @@
                               Name="MaximizeIcon"
                               Data="M2048 2048v-2048h-2048v2048h2048zM1843 1843h-1638v-1638h1638v1638z"></Path>
                     </Button>
-
+                    <!-- Close Button -->
                     <Button Width="46"
                             VerticalAlignment="Stretch"
                             BorderThickness="0"
